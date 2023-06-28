@@ -4,7 +4,17 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Application requirement:
+- Product Management
+- Order Management
+- Sales channel management: integrating e-commerce sales channels, Fanpage, Zalo OA, Tiktok
+- Sales Report
+Note:
+- Integrating e-commerce platforms (minimum Shopee, Lazada)
+- Facebook integration
+- Integrated Zalo OA
+- Integrated IP PBX
+- Refer to the application ""Sales Book, Sapo""
 
 A few resources to get you started if this is your first Flutter project:
 
