@@ -1,49 +1,28 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:selling_management/constants/image_assets.dart';
 
-import '../../blocs/intro/intro_bloc.dart';
-import '../../blocs/intro/intro_event.dart';
-import '../../blocs/intro/intro_state.dart';
+import '../../constants/key_translate.dart';
 
 class Intro extends StatelessWidget {
   const Intro({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: /*Center(
-        child: BlocBuilder<IntroBloc, IntroStates>(
-          builder: (context, state){
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text(
-                  'You have pushed the button this many times:',
-                ),
-                Text(
-                  "${BlocProvider.of<IntroBloc>(context).state.counter}",
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-              ],
-            );
-          },
-        ),
-      ),*/ Image.asset('assets/images/full_logo.jpg'),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          FloatingActionButton(
-            onPressed: () => BlocProvider.of<IntroBloc>(context).add(Increment()),
-            tooltip: 'Increment',
-            child: const Icon(FontAwesomeIcons.plus),
-          ),
-          FloatingActionButton(
-            onPressed: () => BlocProvider.of<IntroBloc>(context).add(Decrement()),
-            tooltip: 'Decrement',
-            child: const Icon(FontAwesomeIcons.minus),
-          ),
-        ],
-      ),
+      backgroundColor: Theme.of(context).backgroundColor,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+          children:[
+            Container(
+              margin: const EdgeInsets.only(bottom: 45),
+                child: Image.asset(FULL_LOGO)
+            ),
+            Center(
+              child: Image.asset(INTRO_PIC),
+            ),
+            Text(INTRO_1.tr(), style: TextStyle(color: Theme.of(context).textTheme.labelMedium?.color, fontSize: 15), textAlign: TextAlign.center,),
+          ]
+      )
     );
   }
 }
