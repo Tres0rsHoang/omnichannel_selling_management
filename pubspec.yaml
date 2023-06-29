@@ -39,6 +39,7 @@ dependencies:
   equatable: ^2.0.3
   easy_localization: ^3.0.2
   shared_preferences: ^2.0.15
+  logger: ^1.4.0
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
@@ -8,15 +9,43 @@ class OrderScreen extends StatefulWidget {
   _OrderState createState() => _OrderState();
 }
 
+class Tag {
+  String text;
+  int quantity;
+
+  Tag({required this.text, required this.quantity});
+}
+
 class _OrderState extends State<OrderScreen> {
+  final logger = Logger(
+    printer: PrettyPrinter(
+      methodCount: 0,
+      errorMethodCount: 8,
+      lineLength: 120,
+      colors: true,
+      printEmojis: true,
+      printTime: false,
+    ),
+  );
+
   int _currentIndex = 0;
+  int _chosenTagIndex = 0;
+
+  final List<Tag> _tagList = <Tag>[
+    Tag(text: 'Tất cả', quantity: 123),
+    Tag(text: 'Chờ xác nhận', quantity: 12),
+    Tag(text: 'Đã xác nhận', quantity: 45),
+    Tag(text: 'Đang đóng gói', quantity: 9),
+    Tag(text: 'Đang giao', quantity: 10),
+    Tag(text: 'Đã hoàn tất', quantity: 134),
+  ];
 
   void _onHandleScan() {
-    print('Scan');
+    logger.d('Scan');
   }
 
   void _onHandleCalendarFilterModal() {
-    print('Calendar');
+    logger.d('Calendar');
   }
 
   @override
@@ -103,6 +132,83 @@ class _OrderState extends State<OrderScreen> {
                 ],
               ),
             ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+              height: 55,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: _tagList.length,
+                separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(width: 16.0); // Adjust the width as needed
+                },
+                itemBuilder: (BuildContext context, int index) {
+                  final isSelected = _chosenTagIndex == index;
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _chosenTagIndex = index;
+                      });
+                      // Perform additional actions or logic here based on the selected tag
+                      logger.d(
+                          'Tag tapped: ${_tagList[index].text}, ${_tagList[index].quantity}');
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: isSelected
+                              ? Colors.blue[500]!
+                              : Colors.grey[500]!,
+                          width: 1,
+                        ),
+                        color:
+                            isSelected ? Colors.blue[500] : Colors.transparent,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      // width: 160,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Center(
+                          child: Row(
+                            children: [
+                              Text(
+                                _tagList[index]
+                                    .text, // Use the tags list for displaying the text
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: isSelected
+                                      ? Colors.white
+                                      : Colors.blue[500]!,
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(left: 8.0),
+                                height: 40,
+                                width: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.blueGrey[50],
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    _tagList[index]
+                                        .quantity
+                                        .toString(), // Use the tags list for displaying the quantity
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.blue[500],
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
