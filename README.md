@@ -1,7 +1,4 @@
 # selling_management
-
-A new Flutter project.
-
 ## Getting Started
 
 Application requirement:
