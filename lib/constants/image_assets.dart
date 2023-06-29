@@ -1,2 +1,4 @@
-const String FULL_LOGO= "lib/assets/images/full_logo.jpg";
-const String INTRO_PIC = "lib/assets/images/intro_pic.jpg";
+const String imagesFolderPath = "lib/assets/images/";
+const String FULL_LOGO= imagesFolderPath + "full_logo.jpg";
+const String INTRO_PIC = imagesFolderPath + "intro_pic.jpg";
+const String INTRO_DOT = imagesFolderPath + "intro_dot.jpg";
