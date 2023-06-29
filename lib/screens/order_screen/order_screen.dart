@@ -1,6 +1,6 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
+import 'package:selling_management/logger.dart';
 
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
@@ -17,17 +17,6 @@ class Tag {
 }
 
 class _OrderState extends State<OrderScreen> {
-  final logger = Logger(
-    printer: PrettyPrinter(
-      methodCount: 0,
-      errorMethodCount: 8,
-      lineLength: 120,
-      colors: true,
-      printEmojis: true,
-      printTime: false,
-    ),
-  );
-
   int _currentIndex = 0;
   int _chosenTagIndex = 0;
 
