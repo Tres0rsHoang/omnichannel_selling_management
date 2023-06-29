@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:selling_management/blocs/intro/intro_bloc.dart';
-import 'package:selling_management/screens/Intro/Intro.dart';
+import 'package:selling_management/screens/Intro/intro.dart';
 import 'package:selling_management/themes/app_themes.dart';
 
 void main() async {
   await EasyLocalization.ensureInitialized();
   runApp(
       EasyLocalization(
-          supportedLocales: const [Locale('vi')],
+          supportedLocales: const [Locale('vi'), Locale('en')],
           path: "lib/assets/translations",
           fallbackLocale: const Locale('vi'),
           child: const MyApp()

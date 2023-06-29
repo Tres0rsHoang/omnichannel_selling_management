@@ -19,9 +19,8 @@ class Intro extends StatelessWidget {
             ),
             Image.asset(INTRO_PIC),
             Text(INTRO_1.tr(), style: TextStyle(color: Theme.of(context).textTheme.labelMedium?.color, fontSize: 15), textAlign: TextAlign.center,),
-            TextButton(onPressed: () {}, child: Text("Đăng nhập")),
-            Text("Try cập website"),
-
+            TextButton(onPressed: () {}, child: Text(LOGIN.tr())),
+            Text(ACCESSWEBSITE.tr()),
           ]
       )
     );
