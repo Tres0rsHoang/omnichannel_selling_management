@@ -5,3 +5,4 @@ const String HELLO = "hello";
 const String LOGIN = "login";
 const String ACCESSWEBSITE = "access_website";
 const String READYMANAGEMENT = "ready_management";
+const String SAY_HELLO_USER = "say_hello_user";
