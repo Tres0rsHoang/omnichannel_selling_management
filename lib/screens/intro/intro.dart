@@ -9,23 +9,26 @@ class Intro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:[
-            Container(
-              margin: const EdgeInsets.only(bottom: 45),
-                child: Image.asset(FULL_LOGO)
-            ),
-            Image.asset(INTRO_PIC),
-            Text(INTRO_1.tr(), style: TextStyle(color: Theme.of(context).textTheme.labelMedium?.color, fontSize: 15), textAlign: TextAlign.center,),
-            Image.asset(INTRO_DOT),
-            Text(HELLO.tr()),
-            Text(READYMANAGEMENT.tr()),
-            TextButton(onPressed: () {}, child: Text(LOGIN.tr())),
-            Text(ACCESSWEBSITE.tr()),
-          ]
-      )
-    );
+        backgroundColor: Theme.of(context).backgroundColor,
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                  margin: const EdgeInsets.only(bottom: 45),
+                  child: Image.asset(FULL_LOGO)),
+              Image.asset(INTRO_PIC),
+              Text(
+                INTRO_1.tr(),
+                style: TextStyle(
+                    color: Theme.of(context).textTheme.labelMedium?.color,
+                    fontSize: 15),
+                textAlign: TextAlign.center,
+              ),
+              Image.asset(INTRO_DOT),
+              Text(HELLO.tr()),
+              Text(READYMANAGEMENT.tr()),
+              TextButton(onPressed: () {}, child: Text(LOGIN.tr())),
+              Text(ACCESSWEBSITE.tr()),
+            ]));
   }
 }
