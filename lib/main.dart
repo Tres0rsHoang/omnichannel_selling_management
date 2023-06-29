@@ -24,12 +24,21 @@ void main() async {
   }
 
   runApp(
+<<<<<<< Updated upstream
     EasyLocalization(
         supportedLocales: const [Locale("en"), Locale('vi')],
         path: "lib/assets/translations",
         fallbackLocale: currentLocale,
         child: MyApp(themeStorage: currentThemeStorage)),
   );
+=======
+      EasyLocalization(
+          supportedLocales: const [Locale('vi')],
+          path: "lib/assets/translations",
+          fallbackLocale: const Locale('vi'),
+          child: const MyApp()
+      ),);
+>>>>>>> Stashed changes
 }
 
 class MyApp extends StatefulWidget {
