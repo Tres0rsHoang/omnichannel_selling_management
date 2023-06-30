@@ -7,11 +7,21 @@ class AppThemes {
   static final lightTheme = ThemeData(
     backgroundColor: const Color(0xFFFFFFFF),
     colorScheme: const ColorScheme.light(),
-    primaryColor: const Color(0xFF0F1317),
+    primaryColor: const Color(0xFF1F72DD),
     fontFamily: 'Roboto',
     textTheme: const TextTheme(
       labelMedium: TextStyle(color: Color(0xFF666666)),
+      labelLarge: TextStyle(color: Color(0xFF000000), fontWeight: FontWeight.bold),
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor:const Color(0xFF1F72DD),
+        textStyle: const TextStyle(
+          color: Color(0xFFFFFFFF),
+          fontFamily: 'Roboto'
+        )
+      )
+    )
   );
 
   static final darkTheme = ThemeData(

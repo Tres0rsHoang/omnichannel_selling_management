@@ -3,10 +3,13 @@ import "dart:io";
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:selling_management/blocs/intro_blocs/intro_bloc.dart';
 import 'package:selling_management/blocs/themes_blocs/themes_bloc.dart';
 import 'package:selling_management/screens/order_screen/order_screen.dart';
 import 'package:selling_management/themes/app_themes.dart';
 import "package:shared_preferences/shared_preferences.dart";
+
+import 'screens/intro_screen/intro.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,18 +17,22 @@ void main() async {
   Locale currentLocale = Locale("vi");
   final prefs = await SharedPreferences.getInstance();
   final String? currentLanguageStorage = prefs.getString("language");
-  final String? currentThemeStorage = prefs.getString("themes");
+  final String? currentThemeStorage = prefs.getString("theme");
 
-  if (currentLanguageStorage != null) {
+  //always light theme
+  prefs.setString("theme", "light");
+
+  /*if (currentLanguageStorage != null) {
     currentLocale = Locale(currentLanguageStorage);
-  } else {
+  }
+  else {
     final defaultLanguage = Platform.localeName.substring(0, 2);
     currentLocale = Locale(defaultLanguage);
-  }
+  }*/
 
   runApp(
     EasyLocalization(
-        supportedLocales: const [Locale("en"), Locale('vi')],
+        supportedLocales: const [Locale('vi')],
         path: "lib/assets/translations",
         fallbackLocale: currentLocale,
         child: MyApp(themeStorage: currentThemeStorage)),
@@ -47,6 +54,9 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<ThemesBloc>(
           create: (BuildContext context) => ThemesBloc(),
         ),
+        BlocProvider<IntroBloc>(
+          create: (BuildContext context) => IntroBloc(),
+        )
       ],
       child: BlocBuilder<ThemesBloc, ThemesState>(
         builder: (context, state) {
@@ -55,14 +65,14 @@ class _MyAppState extends State<MyApp> {
 
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: "Flutter Demo",
+            title: "Flutter Omnichannel",
             themeMode: state.themeMode,
             theme: AppThemes.lightTheme,
             darkTheme: AppThemes.darkTheme,
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,
-            home: OrderScreen(),
+            home: const Intro(),
           );
         },
       ),
