@@ -734,47 +734,6 @@ class _OrderState extends State<OrderScreen> {
                               BottomOrderComponent(
                                 status: orderList[position].currentStatus,
                               ),
-                              // Padding(
-                              //   padding: const EdgeInsets.only(
-                              //       bottom: 16.0, left: 16.0, right: 16.0),
-                              //   child: Row(
-                              //     mainAxisAlignment:
-                              //         MainAxisAlignment.spaceBetween,
-                              //     crossAxisAlignment: CrossAxisAlignment.center,
-                              //     mainAxisSize: MainAxisSize.max,
-                              //     children: [
-                              //       Expanded(
-                              //         flex: 1,
-                              //         child: OutlinedButton(
-                              //           onPressed: () {
-                              //             debugPrint('Received click');
-                              //           },
-                              //           child: Text(
-                              //             'Hủy bỏ',
-                              //             style: TextStyle(
-                              //               fontFamily: Theme.of(context)
-                              //                   .textTheme
-                              //                   .bodyMedium
-                              //                   ?.fontFamily,
-                              //               fontSize: 14,
-                              //               color: Colors.black,
-                              //             ),
-                              //           ),
-                              //         ),
-                              //       ),
-                              //       SizedBox(
-                              //           width:
-                              //               10), // Optional spacing between the buttons
-                              //       Expanded(
-                              //         flex: 1,
-                              //         child: ElevatedButton(
-                              //           onPressed: () {},
-                              //           child: const Text('Giao hàng'),
-                              //         ),
-                              //       ),
-                              //     ],
-                              //   ),
-                              // ),
                             ]),
                           );
                         },
