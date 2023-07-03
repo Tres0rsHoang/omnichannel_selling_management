@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
+class Tag {
+  String text;
+  int quantity;
+
+  Tag({required this.text, required this.quantity});
+}
+
 class TagComponent extends StatefulWidget {
   bool isSelected;
-  final String text;
-  final int quantity;
+  final Tag tag;
 
-  TagComponent(
-      {super.key,
-      required this.isSelected,
-      required this.text,
-      required this.quantity});
+  TagComponent({super.key, required this.isSelected, required this.tag});
 
   @override
   _TagState createState() => _TagState();
@@ -33,7 +35,7 @@ class _TagState extends State<TagComponent> {
           child: Row(
             children: [
               Text(
-                widget.text, // Use the tags list for displaying the text
+                widget.tag.text, // Use the tags list for displaying the text
                 style: TextStyle(
                   fontFamily:
                       Theme.of(context).textTheme.bodyMedium?.fontFamily,
@@ -51,7 +53,7 @@ class _TagState extends State<TagComponent> {
                 ),
                 child: Center(
                   child: Text(
-                    widget.quantity
+                    widget.tag.quantity
                         .toString(), // Use the tags list for displaying the quantity
                     style: TextStyle(
                       fontFamily:
