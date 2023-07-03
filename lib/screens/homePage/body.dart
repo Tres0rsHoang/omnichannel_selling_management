@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:selling_management/screens/homePage/headerWithNotify.dart';
+import 'package:selling_management/screens/homePage/header_with_notify.dart';
 
 import '../../constants/image_assets.dart';
 
@@ -8,10 +8,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:badges/badges.dart' as badges;
 
 class Body extends StatelessWidget {
-  
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    
+
     /// List of Tab Bar Item
     List<String> items = [
       "Home",
@@ -23,7 +22,7 @@ class Body extends StatelessWidget {
       "Setting",
       "Profile",
     ];
-  
+
     /// List of body icon
     List<IconData> icons = [
       Icons.home,
@@ -36,21 +35,18 @@ class Body extends StatelessWidget {
       Icons.person
     ];
     int current = 0;
-  
-    return SingleChildScrollView (
-      child:Column(
+
+    return SingleChildScrollView(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HeaderWithNotify(size: size),
           Container(
-            
             decoration: BoxDecoration(
-                  color: Colors.blue[50],
-                  borderRadius: const BorderRadius.only(
+                color: Colors.blue[50],
+                borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(36),
-                    topRight: Radius.circular(36)
-                  )
-                ),
+                    topRight: Radius.circular(36))),
             // color: Colors.blue[50],
             //       decoration: BoxDecoration(
             //         borderRadius: BorderRadius.circular(10),
@@ -62,20 +58,17 @@ class Body extends StatelessWidget {
             //           )
             //         ]
             //       ),
-            
+
             child: Stack(
               children: [
-                
                 Column(
                   children: [
                     SizedBox(
                       width: double.infinity,
                       height: 60,
-                      
+
                       child: ListView(
-                        children: [
-                          
-                        ],
+                        children: [],
                       ),
                       // child: ListView.builder(
                       //   scrollDirection: Axis.horizontal,
@@ -87,22 +80,19 @@ class Body extends StatelessWidget {
                       //       decoration: BoxDecoration(color: Colors.white),
                       //       child: Center(
                       //         child: Text("data"),
-                            
+
                       //       ),
                       //     );
                       //   },
-                      // ),  
+                      // ),
                     ),
-                  
-                    
                   ],
                 )
               ],
             ),
           )
         ],
-      ) ,
-      
+      ),
     );
   }
 }
