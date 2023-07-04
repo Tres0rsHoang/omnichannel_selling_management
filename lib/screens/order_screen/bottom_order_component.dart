@@ -39,6 +39,9 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                 Expanded(
                   flex: 1,
                   child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue[500],
+                    ),
                     onPressed: () {},
                     child: const Text('Xác nhận'),
                   ),
@@ -67,6 +70,9 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                     Expanded(
                       flex: 1,
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue[500],
+                        ),
                         onPressed: () {},
                         child: const Text('Đóng gói'),
                       ),
@@ -96,6 +102,9 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                         Expanded(
                           flex: 1,
                           child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue[500],
+                            ),
                             onPressed: () {},
                             child: const Text('Giao hàng'),
                           ),
@@ -107,6 +116,9 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                             Expanded(
                               flex: 1,
                               child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue[500],
+                                ),
                                 onPressed: () {},
                                 child: const Text('Hoàn tất'),
                               ),
