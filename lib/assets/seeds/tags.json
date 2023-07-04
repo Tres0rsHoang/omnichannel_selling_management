@@ -1,0 +1,26 @@
+[
+    {
+        "text": "Tất cả",
+        "quantity": 123
+    },
+    {
+        "text": "Chờ xác nhận",
+        "quantity": 12
+    },
+    {
+        "text": "Đã xác nhận",
+        "quantity": 45
+    },
+    {
+        "text": "Đang đóng gói",
+        "quantity": 9
+    },
+    {
+        "text": "Đang giao",
+        "quantity": 10
+    },
+    {
+        "text": "Đã hoàn tất",
+        "quantity": 134
+    }
+]
