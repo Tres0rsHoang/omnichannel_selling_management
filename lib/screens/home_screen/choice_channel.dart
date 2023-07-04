@@ -68,7 +68,7 @@ class _ChoiceChannel extends State<ChoiceChannel> {
 
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(top: 20, left: 10, right: 10),
+        padding: EdgeInsets.only(top: 0, left: 10, right: 10),
         child: Row(
           children: [
             Column(

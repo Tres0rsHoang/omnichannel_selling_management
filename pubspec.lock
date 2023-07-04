@@ -41,6 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      sha256: "9c695cc963bf1d04a47bd6021f68befce8970bcd61d24938e1fb0918cf5d9c42"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.1"
   characters:
     dependency: transitive
     description:
@@ -73,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  dots_indicator:
+    dependency: "direct main"
+    description:
+      name: dots_indicator
+      sha256: f1599baa429936ba87f06ae5f2adc920a367b16d08f74db58c3d0f6e93bcdb5c
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
   easy_localization:
     dependency: "direct main"
     description:
@@ -89,6 +105,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.2"
+  equatable:
+    dependency: "direct main"
+    description:
+      name: equatable
+      sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -113,6 +137,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      sha256: c1e26c7e48496be85104c16c040950b0436674cdf0737f3f6e95511b2529b592
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.63.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -158,7 +190,7 @@ packages:
     source: hosted
     version: "10.5.0"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: a3715e3bc90294e971cb7dc063fbf3cd9ee0ebf8604ffeafabd9e6f16abbdbe6
@@ -181,6 +213,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  logger:
+    dependency: "direct main"
+    description:
+      name: logger
+      sha256: "7ad7215c15420a102ec687bb320a7312afd449bac63bfb1c60d9787c27b9767f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.0"
   matcher:
     dependency: transitive
     description:
@@ -286,7 +326,7 @@ packages:
     source: hosted
     version: "6.0.5"
   shared_preferences:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: shared_preferences
       sha256: "396f85b8afc6865182610c0a2fc470853d56499f75f7499e2a73a9f0539d23d0"
@@ -378,6 +418,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  syncfusion_flutter_charts:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_charts
+      sha256: "2cf092e1b09a9c75d2dc4a6d22f5b2d642010b8c3ae0f8a65272715af0ebe211"
+      url: "https://pub.dev"
+    source: hosted
+    version: "22.1.36"
+  syncfusion_flutter_core:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_core
+      sha256: cd99c16c22658fce7ef036af5e72125428c53b8b58110ef01593b1e17891b68a
+      url: "https://pub.dev"
+    source: hosted
+    version: "22.1.36"
   term_glyph:
     dependency: transitive
     description:

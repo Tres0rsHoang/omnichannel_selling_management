@@ -1,7 +1,11 @@
 {
-  "hello": "HELLO",
-  "intro_1": "Track orders, invoices, revenue and more.",
-  "login": "Login",
-  "access_website": "Access website",
+
+  "hello": "HELLO!!!",
+  "intro_1": " ",
+  "intro_2": " ",
+  "intro_3": " ",
+  "login": " ",
+  "access_website": " ",
+  "ready_management": " ",
   "say_hello_user": "Hi,"
 }
