@@ -7,14 +7,14 @@ import '../../widgets/bottom_navigation_bar.dart';
 import 'body.dart';
 
 class HomeScreen extends StatelessWidget {
-
+  const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-      body: Body(),
-      bottomNavigationBar: BottomNavigation(),
-      
-    );
+    // return Scaffold(
+    //   backgroundColor: Theme.of(context).backgroundColor,
+    //   body: Body(),
+
+    // );
+    return Body();
   }
 }

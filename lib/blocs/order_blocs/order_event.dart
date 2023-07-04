@@ -8,3 +8,13 @@ class ChooseTagEvent extends OrderEvent {
 
   ChooseTagEvent(this.chosenTagIndex);
 }
+
+class UpdateOrderListEvent extends OrderEvent {
+  final List<Order> orderList;
+
+  UpdateOrderListEvent(this.orderList);
+}
+
+class InitializeOrderEvent extends OrderEvent {
+  InitializeOrderEvent();
+}
