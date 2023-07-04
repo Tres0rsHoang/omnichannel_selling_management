@@ -34,8 +34,6 @@ class LoadingState extends State<LoadingScreen>{
 
   @override
   Widget build(BuildContext context) {
-    loadingData();
-
     return Column(
       children: [
         Flexible(
@@ -98,7 +96,14 @@ class LoadingState extends State<LoadingScreen>{
           flex: 2,
           child: Column(
             children: [
-              Padding(padding: const EdgeInsets.only(bottom: 80) ,child: Image.asset('lib/assets/images/full_logo.jpg')),
+              Padding(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height*0.04,
+                  left: MediaQuery.of(context).size.width*0.05,
+                  right: MediaQuery.of(context).size.width*0.05,
+                ),
+                child: Image.asset('lib/assets/images/full_logo.jpg')
+              ),
               const Center(child: CircularProgressIndicator(),
               ),
             ],

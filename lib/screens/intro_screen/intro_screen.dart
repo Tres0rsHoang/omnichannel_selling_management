@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:selling_management/constants/image_assets.dart';
+import 'package:selling_management/screens/login_screen/login_screen.dart';
 
 import '../../constants/key_translate.dart';
 
@@ -108,7 +109,12 @@ class IntroState extends State<IntroScreen>{
                   width: MediaQuery.of(context).size.width * 0.52,
                   height: MediaQuery.of(context).size.height * 0.06,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LoginScreen()),
+                      );
+                    },
                     child: Text(
                       LOGIN.tr(),
                       style: const TextStyle(
