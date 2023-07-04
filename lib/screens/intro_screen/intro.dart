@@ -17,7 +17,6 @@ class Intro extends StatelessWidget {
   Widget build(BuildContext context) {
     var pic = [INTRO_PIC_1, INTRO_PIC_2, INTRO_PIC_3];
     var intro = [INTRO_1.tr(), INTRO_2.tr(), INTRO_3.tr()];
-    int currentIndex = 0;
 
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,

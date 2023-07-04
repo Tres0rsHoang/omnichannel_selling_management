@@ -15,6 +15,8 @@ import 'package:selling_management/utils/string.dart';
 import 'package:selling_management/constants/image_assets.dart';
 import 'package:selling_management/utils/time.dart';
 
+import '../../widgets/bottom_navigation_bar.dart';
+
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
 

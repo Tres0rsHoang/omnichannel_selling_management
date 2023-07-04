@@ -44,7 +44,7 @@ class HeaderWithNotify extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           minRadius: 25,
-                          backgroundImage: AssetImage(INTRO_PIC),
+                          backgroundImage: AssetImage(FULL_LOGO),
                         ),
                         SizedBox(
                           width: 10,
