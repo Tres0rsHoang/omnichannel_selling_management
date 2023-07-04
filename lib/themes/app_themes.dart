@@ -7,7 +7,8 @@ class AppThemes {
   static final lightTheme = ThemeData(
     backgroundColor: const Color(0xFFFFFFFF),
     colorScheme: const ColorScheme.light(),
-    primaryColor: const Color(0xFF0F1317),
+    primaryColor: Colors.blue,
+
     fontFamily: 'Roboto',
     textTheme: const TextTheme(
       labelMedium: TextStyle(color: Color(0xFF666666)),
@@ -23,4 +24,5 @@ class AppThemes {
 
 extension CustomColorScheme on ColorScheme {
   Color get lightGrey => const Color(0xFFACACAC);
+  Color get bodyHomeColor => const Color(0xfD6E5F6);
 }

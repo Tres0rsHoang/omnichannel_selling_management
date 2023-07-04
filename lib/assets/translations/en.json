@@ -2,5 +2,6 @@
   "hello": "HELLO",
   "intro_1": "Track orders, invoices, revenue and more.",
   "login": "Login",
-  "access_website": "Access website"
+  "access_website": "Access website",
+  "say_hello_user": "Hi,"
 }
