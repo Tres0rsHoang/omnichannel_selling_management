@@ -9,6 +9,7 @@ import 'package:selling_management/blocs/intro_blocs/intro_bloc.dart';
 import 'package:selling_management/blocs/order_blocs/order_bloc.dart';
 import 'package:selling_management/blocs/product_blocs/product_bloc.dart';
 import 'package:selling_management/blocs/themes_blocs/themes_bloc.dart';
+import 'package:selling_management/logger.dart';
 import 'package:selling_management/screens/home_screen/home_screen.dart';
 import 'package:selling_management/screens/order_screen/order_screen.dart';
 
@@ -107,6 +108,29 @@ class _BaseScreenState extends State<BaseScreen> {
     const OrderScreen(),
   ];
 
+  void _onItemTapped(int index) {
+    if (index == 4) {
+      _openBottomSheetDialog();
+    } else {
+      setState(() {
+        _currentIndex = index;
+      });
+    }
+  }
+
+  void _openBottomSheetDialog() {
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 100,
+          // Customize your bottom sheet content here
+          child: Text('Fifth Item BottomSheetDialog'),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemesBloc, ThemesState>(builder: (context, state) {
@@ -142,11 +166,7 @@ class _BaseScreenState extends State<BaseScreen> {
             unselectedItemColor: Colors.grey[500],
             selectedItemColor: Colors.blue[300],
             currentIndex: _currentIndex,
-            onTap: (value) => {
-              setState(() {
-                _currentIndex = value;
-              })
-            },
+            onTap: _onItemTapped,
           ),
         ),
       );

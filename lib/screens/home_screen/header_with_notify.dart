@@ -16,7 +16,6 @@ class HeaderWithNotify extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    print(SAY_HELLO_USER.tr());
     return Column(children: <Widget>[
       Container(
           height: size.height * 0.3,
