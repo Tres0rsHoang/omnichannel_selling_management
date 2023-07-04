@@ -59,28 +59,36 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
     try {
       final List<Order> orderList = await readOrdersJson();
       final List<Tag> tagList = await readTagsJson();
-      emit(OrderState(
-        chosenTagIndex: 0,
-        orderList: orderList,
-        tagList: tagList,
-      ));
+      emit(
+        OrderState(
+          chosenTagIndex: 0,
+          orderList: orderList,
+          tagList: tagList,
+        ),
+      );
     } catch (e) {
       logger.d('Error initializing order list: $e');
     }
   }
 
   void _onSelectTag(ChooseTagEvent event, Emitter<OrderState> emit) {
-    emit(OrderState(
+    emit(
+      OrderState(
         chosenTagIndex: event.chosenTagIndex,
         orderList: state.orderList,
-        tagList: state.tagList));
+        tagList: state.tagList,
+      ),
+    );
   }
 
   void _onUpdateOrderList(
       UpdateOrderListEvent event, Emitter<OrderState> emit) {
-    emit(OrderState(
+    emit(
+      OrderState(
         chosenTagIndex: state.chosenTagIndex,
         orderList: event.orderList,
-        tagList: state.tagList));
+        tagList: state.tagList,
+      ),
+    );
   }
 }

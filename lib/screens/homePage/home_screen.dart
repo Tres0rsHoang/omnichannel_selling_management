@@ -6,13 +6,14 @@ import '../../constants/key_translate.dart';
 import 'body.dart';
 
 class HomeScreen extends StatelessWidget {
-
+  const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
-      body: Body(),
-      
-    );
+    // return Scaffold(
+    //   backgroundColor: Theme.of(context).backgroundColor,
+    //   body: Body(),
+
+    // );
+    return Body();
   }
 }

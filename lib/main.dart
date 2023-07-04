@@ -2,11 +2,13 @@ import "dart:io";
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:selling_management/blocs/intro_blocs/intro_bloc.dart';
 import 'package:selling_management/blocs/order_blocs/order_bloc.dart';
 import 'package:selling_management/blocs/product_blocs/product_bloc.dart';
 import 'package:selling_management/blocs/themes_blocs/themes_bloc.dart';
+import 'package:selling_management/screens/homePage/home_screen.dart';
 import 'package:selling_management/screens/order_screen/order_screen.dart';
 import 'package:selling_management/themes/app_themes.dart';
 import "package:shared_preferences/shared_preferences.dart";
@@ -62,7 +64,7 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<OrderBloc>(
           create: (BuildContext context) => OrderBloc(),
         ),
-        BlocProvider(
+        BlocProvider<ProductBloc>(
           create: (BuildContext context) => ProductBloc(),
         ),
       ],
@@ -80,10 +82,72 @@ class _MyAppState extends State<MyApp> {
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,
-            home: const OrderScreen(),
+            home: const BaseScreen(),
           );
         },
       ),
     );
+  }
+}
+
+class BaseScreen extends StatefulWidget {
+  const BaseScreen({Key? key}) : super(key: key);
+
+  @override
+  State<BaseScreen> createState() => _BaseScreenState();
+}
+
+class _BaseScreenState extends State<BaseScreen> {
+  int _currentIndex = 0;
+  // Add more screen here
+  List<Widget> widgetOptions = <Widget>[
+    const HomeScreen(),
+    const OrderScreen(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ThemesBloc, ThemesState>(builder: (context, state) {
+      return SafeArea(
+        child: Scaffold(
+          backgroundColor: Theme.of(context).colorScheme.background,
+          body: widgetOptions.asMap().containsKey(_currentIndex)
+              ? widgetOptions[_currentIndex]
+              : const HomeScreen(),
+          bottomNavigationBar: BottomNavigationBar(
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Tổng quan',
+              ),
+              BottomNavigationBarItem(
+                icon: FaIcon(FontAwesomeIcons.newspaper),
+                label: 'Đơn hàng',
+              ),
+              BottomNavigationBarItem(
+                icon: FaIcon(FontAwesomeIcons.cartShopping),
+                label: 'Sản phẩm',
+              ),
+              BottomNavigationBarItem(
+                icon: FaIcon(FontAwesomeIcons.box),
+                label: 'Kho',
+              ),
+              BottomNavigationBarItem(
+                icon: FaIcon(FontAwesomeIcons.gripVertical),
+                label: 'Thêm',
+              ),
+            ],
+            unselectedItemColor: Colors.grey[500],
+            selectedItemColor: Colors.blue[300],
+            currentIndex: _currentIndex,
+            onTap: (value) => {
+              setState(() {
+                _currentIndex = value;
+              })
+            },
+          ),
+        ),
+      );
+    });
   }
 }
