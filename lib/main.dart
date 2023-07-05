@@ -12,7 +12,8 @@ import 'package:selling_management/blocs/themes_blocs/themes_bloc.dart';
 import 'package:selling_management/screens/loading_screen/loading_screen.dart';
 import 'package:selling_management/logger.dart';
 import 'package:selling_management/screens/home_screen/home_screen.dart';
-import 'package:selling_management/screens/notify_screen/notify.dart';
+import 'package:selling_management/screens/notify_screen/notify.dart'
+import 'package:selling_management/screens/login_screen/login_screen.dart';
 import 'package:selling_management/screens/order_screen/order_screen.dart';
 
 import 'package:selling_management/themes/app_themes.dart';
@@ -86,7 +87,7 @@ class _MyAppState extends State<MyApp> {
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,
-            home: const LoadingScreen(),
+            home: const LoginScreen(),
           );
         },
       ),

@@ -22,7 +22,7 @@ class AppThemes {
           fontFamily: 'Roboto'
         )
       )
-    )
+    ),
   );
 
   static final darkTheme = ThemeData(
