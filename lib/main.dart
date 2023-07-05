@@ -1,22 +1,16 @@
-import "dart:io";
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:easy_localization/easy_localization.dart';
-
 import 'package:selling_management/blocs/intro_blocs/intro_bloc.dart';
 import 'package:selling_management/blocs/order_blocs/order_bloc.dart';
 import 'package:selling_management/blocs/product_blocs/product_bloc.dart';
 import 'package:selling_management/blocs/themes_blocs/themes_bloc.dart';
-import 'package:selling_management/logger.dart';
 import 'package:selling_management/screens/home_screen/home_screen.dart';
 import 'package:selling_management/screens/order_screen/order_screen.dart';
-
+import 'package:selling_management/screens/product_screen/product_screen.dart';
 import 'package:selling_management/themes/app_themes.dart';
 import "package:shared_preferences/shared_preferences.dart";
-
-import 'screens/intro_screen/intro.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -106,6 +100,7 @@ class _BaseScreenState extends State<BaseScreen> {
   List<Widget> widgetOptions = <Widget>[
     const HomeScreen(),
     const OrderScreen(),
+    const ProductScreen(),
   ];
 
   void _onItemTapped(int index) {

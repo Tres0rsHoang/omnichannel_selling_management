@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-
-import 'package:selling_management/screens/home_screen/tabbar_view.dart';
 import 'package:selling_management/screens/home_screen/header_with_notify.dart';
-
-
-import '../../constants/image_assets.dart';
-
-import 'package:easy_localization/easy_localization.dart';
-import 'package:badges/badges.dart' as badges;
-
 import 'package:selling_management/screens/home_screen/option_choice.dart';
+import 'package:selling_management/screens/home_screen/tabbar_view.dart';
+
 import 'choice_channel.dart';
 
 class Body extends StatelessWidget {
+  const Body({Key? key}) : super(key: key);
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
@@ -23,18 +17,14 @@ class Body extends StatelessWidget {
         children: [
           HeaderWithNotify(size: size),
           Container(
-          // color: Colors.blue[50],
-          child:  Column(
-          
-          children: [
-          OptionChoice(),
-          ChoiceChannel(),
-          StatisticalTabBar(),
-
-          ],
-          )
-          )
-
+              // color: Colors.blue[50],
+              child: Column(
+            children: [
+              OptionChoice(),
+              ChoiceChannel(),
+              StatisticalTabBar(),
+            ],
+          ))
         ],
       ),
     );

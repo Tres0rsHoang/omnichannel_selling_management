@@ -38,12 +38,14 @@ class HeaderWithNotify extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
                           minRadius: 25,
-                          backgroundImage: AssetImage(FULL_LOGO),
+                          backgroundImage: AssetImage(
+                            FULL_LOGO,
+                          ),
                         ),
                         SizedBox(
                           width: 10,
