@@ -5,6 +5,13 @@ class Tag {
   int quantity;
 
   Tag({required this.text, required this.quantity});
+
+  factory Tag.fromJson(Map<String, dynamic> json) {
+    return Tag(
+      text: json['text'] as String,
+      quantity: json['quantity'] as int,
+    );
+  }
 }
 
 class TagComponent extends StatefulWidget {
