@@ -79,6 +79,7 @@ class Intro extends StatelessWidget {
                       );
                   }
               ),
+              
               Container(
                 margin: const EdgeInsets.only(right: 100),
                 child: Column(

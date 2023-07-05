@@ -26,16 +26,15 @@ class _MultiChoice extends State<MultiChoice> {
         _selectedItem.remove(itemValue);
       }
     });
-
-    
   }
-  void _cancel() {
-      Navigator.pop(context);
-    }
 
-    void _submit() {
-      Navigator.pop(context, _selectedItem);
-    }
+  void _cancel() {
+    Navigator.pop(context);
+  }
+
+  void _submit() {
+    Navigator.pop(context, _selectedItem);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,18 +72,28 @@ class _ChoiceChannel extends State<ChoiceChannel> {
           children: [
             Column(
               children: [
-                ElevatedButton(
+                OutlinedButton(
+                    style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                            
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    side: BorderSide(color: Theme.of(context).primaryColor)))),
                     onPressed: showMultipleSelect,
                     child: Row(
                       children: [
-                        const Text("Chon kenh ban"),
+                        const Text("Chon kenh ban", style: TextStyle(color: Colors.black,fontWeight: FontWeight.w400),),
                         Icon(Icons.arrow_drop_down),
                       ],
                     )),
               ],
             ),
             Spacer(),
-            Text("thoi gian cap nhat")
+            Text(
+              "thoi gian cap nhat 9:00",
+              style: TextStyle(fontSize: 11),
+            )
           ],
         ));
   }

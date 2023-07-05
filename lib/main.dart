@@ -8,6 +8,7 @@ import 'package:selling_management/blocs/intro_blocs/intro_bloc.dart';
 import 'package:selling_management/blocs/order_blocs/order_bloc.dart';
 import 'package:selling_management/blocs/themes_blocs/themes_bloc.dart';
 import 'package:selling_management/screens/home_screen/home_screen.dart';
+import 'package:selling_management/screens/notify_screen/notify.dart';
 import 'package:selling_management/screens/order_screen/order_screen.dart';
 
 import 'package:selling_management/themes/app_themes.dart';

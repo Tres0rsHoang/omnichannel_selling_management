@@ -23,12 +23,14 @@ class Body extends StatelessWidget {
         children: [
           HeaderWithNotify(size: size),
           Container(
-          // color: Colors.blue[50],
+          // color: Colcoors.blue[50],
+          
           child:  Column(
           
           children: [
           OptionChoice(),
           ChoiceChannel(),
+          
           StatisticalTabBar(),
 
           ],
