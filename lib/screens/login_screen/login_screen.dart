@@ -1,19 +1,16 @@
-import 'dart:html';
-
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:selling_management/constants/key_translate.dart';
 
-class LoginScreen extends StatefulWidget{
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
   State<StatefulWidget> createState() => LoginState();
 }
 
-class LoginState extends State<LoginScreen>{
+class LoginState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +43,7 @@ class LoginState extends State<LoginScreen>{
                                 tileMode: TileMode.mirror,
                               ),
                               shape: BoxShape.circle,
-                            )
-                        ),
+                            )),
                       ),
                     ),
                   ),
@@ -71,8 +67,7 @@ class LoginState extends State<LoginScreen>{
                             shape: BoxShape.circle,
                           ),
                         ),
-                      )
-                  ),
+                      )),
                 ],
               ),
             ),
@@ -80,38 +75,41 @@ class LoginState extends State<LoginScreen>{
           Flexible(
             flex: 3,
             child: Padding(
-              padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.05),
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height * 0.05),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                       padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).size.height*0.04,
-                        left: MediaQuery.of(context).size.width*0.05,
-                        right: MediaQuery.of(context).size.width*0.05,
+                        bottom: MediaQuery.of(context).size.height * 0.04,
+                        left: MediaQuery.of(context).size.width * 0.05,
+                        right: MediaQuery.of(context).size.width * 0.05,
                       ),
-                      child: Image.asset('lib/assets/images/full_logo.jpg')
-                  ),
+                      child: Image.asset('lib/assets/images/full_logo.jpg')),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.12),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.12),
                     child: Column(
                       children: [
                         TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide(color: Theme.of(context).primaryColor)
-                            ),
+                                borderSide: BorderSide(
+                                    color: Theme.of(context).primaryColor)),
                             hintText: USERNAME.tr(),
                           ),
                         ),
-                        const SizedBox(height: 20,),
+                        const SizedBox(
+                          height: 20,
+                        ),
                         TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide(color: Theme.of(context).primaryColor)
-                            ),
+                                borderSide: BorderSide(
+                                    color: Theme.of(context).primaryColor)),
                             hintText: PASSWORD.tr(),
                           ),
                         ),
@@ -132,9 +130,8 @@ class LoginState extends State<LoginScreen>{
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height*0.02,
-                      bottom: MediaQuery.of(context).size.height*0.013
-                    ),
+                        top: MediaQuery.of(context).size.height * 0.02,
+                        bottom: MediaQuery.of(context).size.height * 0.013),
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width * 0.52,
                       height: MediaQuery.of(context).size.height * 0.06,
@@ -143,31 +140,25 @@ class LoginState extends State<LoginScreen>{
                         child: Text(
                           LOGIN.tr(),
                           style: const TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontSize: 24
-                          ),
+                              color: Color(0xFFFFFFFF), fontSize: 24),
                         ),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height*0.11,
+                    height: MediaQuery.of(context).size.height * 0.11,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         TextButton(
-                          onPressed: (){},
-                          child: Text(
-                            REGISTER.tr(),
-                            style: const TextStyle(
-                              decoration: TextDecoration.underline,
-                              fontWeight: FontWeight.normal
-                            ),
-                          )
-                        ),
-                        Text(
-                          OR.tr()
-                        ),
+                            onPressed: () {},
+                            child: Text(
+                              REGISTER.tr(),
+                              style: const TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  fontWeight: FontWeight.normal),
+                            )),
+                        Text(OR.tr()),
                         Stack(
                           children: [
                             Divider(
@@ -177,14 +168,13 @@ class LoginState extends State<LoginScreen>{
                             Align(
                               alignment: Alignment.topCenter,
                               child: Container(
-                                color: Theme.of(context).colorScheme.background,
-                                child: Text(
-                                  LOGINWITH.tr(),
-                                  style: TextStyle(
-                                    color: Theme.of(context).primaryColor
-                                  ),
-                                )
-                              ),
+                                  color:
+                                      Theme.of(context).colorScheme.background,
+                                  child: Text(
+                                    LOGINWITH.tr(),
+                                    style: TextStyle(
+                                        color: Theme.of(context).primaryColor),
+                                  )),
                             )
                           ],
                         )
@@ -198,14 +188,12 @@ class LoginState extends State<LoginScreen>{
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).primaryColor,
-                              width: 1
-                            ),
-                            borderRadius: BorderRadius.circular(10)
-                          ),
+                              border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                  width: 1),
+                              borderRadius: BorderRadius.circular(10)),
                           child: IconButton(
-                            onPressed: (){},
+                            onPressed: () {},
                             icon: Icon(
                               FontAwesomeIcons.facebook,
                               color: Theme.of(context).primaryColor,
@@ -216,12 +204,10 @@ class LoginState extends State<LoginScreen>{
                           decoration: BoxDecoration(
                               border: Border.all(
                                   color: Theme.of(context).primaryColor,
-                                  width: 1
-                              ),
-                              borderRadius: BorderRadius.circular(10)
-                          ),
+                                  width: 1),
+                              borderRadius: BorderRadius.circular(10)),
                           child: IconButton(
-                            onPressed: (){},
+                            onPressed: () {},
                             icon: Icon(
                               FontAwesomeIcons.apple,
                               color: Theme.of(context).primaryColor,
@@ -232,12 +218,10 @@ class LoginState extends State<LoginScreen>{
                           decoration: BoxDecoration(
                               border: Border.all(
                                   color: Theme.of(context).primaryColor,
-                                  width: 1
-                              ),
-                              borderRadius: BorderRadius.circular(10)
-                          ),
+                                  width: 1),
+                              borderRadius: BorderRadius.circular(10)),
                           child: IconButton(
-                            onPressed: (){},
+                            onPressed: () {},
                             icon: Icon(
                               FontAwesomeIcons.google,
                               color: Theme.of(context).primaryColor,
@@ -255,5 +239,4 @@ class LoginState extends State<LoginScreen>{
       ),
     );
   }
-
 }
