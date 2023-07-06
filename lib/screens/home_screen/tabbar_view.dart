@@ -11,10 +11,8 @@ class StatisticalTabBar extends StatefulWidget {
   State<StatisticalTabBar> createState() => _StatisticalTabBar();
 }
 
-
 class _StatisticalTabBar extends State<StatisticalTabBar>
     with TickerProviderStateMixin {
-    
   @override
   Widget build(BuildContext context) {
     TabController _controller = TabController(length: 3, vsync: this);
@@ -142,13 +140,15 @@ class _StatisticalTabBar extends State<StatisticalTabBar>
                                 padding: EdgeInsets.only(left: 10, top: 0),
                                 decoration: BoxDecoration(
                                     color: Theme.of(context)
-                                        .backgroundColor,
+                                        .colorScheme
+                                        .bodyHomeColor,
                                     borderRadius: BorderRadius.circular(5),
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
-                                        color: const Color.fromARGB(255, 91, 90, 90),
-                                        blurRadius: 1,
-                                        offset: const Offset(0, 0),
+                                        color: Color.fromRGBO(156, 163, 172, 0),
+                                        blurRadius: 5,
+                                        offset: const Offset(0, 1),
+                                        spreadRadius: -2,
                                       ),
                                       
                                     ]),
@@ -162,7 +162,8 @@ class _StatisticalTabBar extends State<StatisticalTabBar>
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
                                         children: [
                                           const CircleAvatar(
                                             minRadius: 15,
@@ -198,21 +199,21 @@ class _StatisticalTabBar extends State<StatisticalTabBar>
                           childCount: 3,
                         ),
                       ),
+                      
                       SliverFixedExtentList(
                         itemExtent: 600.0,
                         delegate: SliverChildBuilderDelegate(
                           childCount: 1,
                           (BuildContext context, int index) {
                             return Container(
+                              
                               alignment: Alignment.center,
                               color: Colors.lightBlue[100 * (index % 9)],
                               child: Column(
-                              children: [
-                              LineChartSample1(),
-                              LineChartSample1(),
-                              
-                              
-                              ],
+                                children: [
+                                  LineChartSample1(),
+                                  LineChartSample1(),
+                                ],
                               ),
                             );
                           },

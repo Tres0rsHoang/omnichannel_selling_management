@@ -22,7 +22,7 @@ class AppThemes {
           fontFamily: 'Roboto'
         )
       )
-    )
+    ),
   );
 
   static final darkTheme = ThemeData(
@@ -34,5 +34,5 @@ class AppThemes {
 
 extension CustomColorScheme on ColorScheme {
   Color get lightGrey => const Color(0xFFACACAC);
-  Color get bodyHomeColor => Color.fromARGB(0, 231, 237, 244);
+  Color get bodyHomeColor => Color.fromARGB(110, 202, 230, 251) ;
 }

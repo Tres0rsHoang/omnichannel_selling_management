@@ -6,6 +6,11 @@
   "login": "Đăng nhập",
   "access_website": "Truy cập website",
   "ready_management": "Sẵn sàng để quản lí hiệu quả hơn?",
-  "say_hello_user": "Xin chào, "
-  
+  "say_hello_user": "Xin chào, ",
+  "username": "Tên đăng nhập",
+  "password": "Mật khẩu",
+  "forgetPass": "Quên mật khẩu?",
+  "register": "Đăng kí",
+  "or": "hoặc",
+  "loginWith": "Đăng nhập với"
 }

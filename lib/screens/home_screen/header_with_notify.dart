@@ -116,6 +116,7 @@ class HeaderWithNotify extends StatelessWidget {
                           color: Colors.black45.withOpacity(0.23),
                         ),
                       ],
+                      
                     ),
                   )),
             ],

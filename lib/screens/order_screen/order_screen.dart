@@ -695,7 +695,7 @@ class _OrderState extends State<OrderScreen> {
                       right: 16, // Adjust the right position as needed
 
                       child: FloatingActionButton(
-                        backgroundColor: Colors.blue[500],
+                        backgroundColor: Theme.of(context).primaryColor,
                         onPressed: () {
                           // Handle button press
                         },

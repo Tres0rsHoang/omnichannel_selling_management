@@ -7,6 +7,7 @@ import 'package:selling_management/blocs/order_blocs/order_bloc.dart';
 import 'package:selling_management/blocs/product_blocs/product_bloc.dart';
 import 'package:selling_management/blocs/themes_blocs/themes_bloc.dart';
 import 'package:selling_management/screens/home_screen/home_screen.dart';
+import 'package:selling_management/screens/login_screen/login_screen.dart';
 import 'package:selling_management/screens/order_screen/order_screen.dart';
 import 'package:selling_management/screens/product_screen/product_screen.dart';
 import 'package:selling_management/themes/app_themes.dart';
@@ -72,7 +73,7 @@ class _MyAppState extends State<MyApp> {
 
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: "Flutter Omnichannel",
+            title: "Omnichannel Selling Management",
             themeMode: state.themeMode,
             theme: AppThemes.lightTheme,
             darkTheme: AppThemes.darkTheme,
@@ -159,7 +160,7 @@ class _BaseScreenState extends State<BaseScreen> {
               ),
             ],
             unselectedItemColor: Colors.grey[500],
-            selectedItemColor: Colors.blue[300],
+            selectedItemColor: Theme.of(context).primaryColor,
             currentIndex: _currentIndex,
             onTap: _onItemTapped,
           ),
