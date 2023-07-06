@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:selling_management/constants/key_translate.dart';
 
 class BottomOrderComponent extends StatefulWidget {
   final int
@@ -25,7 +27,7 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                   child: OutlinedButton(
                     onPressed: () {},
                     child: Text(
-                      'Hủy bỏ',
+                      CANCEL.tr(),
                       style: TextStyle(
                         fontFamily:
                             Theme.of(context).textTheme.bodyMedium?.fontFamily,
@@ -35,7 +37,9 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10), // Optional spacing between the buttons
+                const SizedBox(
+                  width: 10,
+                ), // Optional spacing between the buttons
                 Expanded(
                   flex: 1,
                   child: ElevatedButton(
@@ -43,7 +47,15 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                       backgroundColor: Theme.of(context).primaryColor,
                     ),
                     onPressed: () {},
-                    child: const Text('Xác nhận'),
+                    child: Text(
+                      CONFIRM.tr(),
+                      style: TextStyle(
+                        fontFamily:
+                            Theme.of(context).textTheme.bodyMedium?.fontFamily,
+                        fontSize: 14,
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
                 ),
               ]
@@ -54,7 +66,7 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                       child: OutlinedButton(
                         onPressed: () {},
                         child: Text(
-                          'Hủy bỏ',
+                          CANCEL.tr(),
                           style: TextStyle(
                             fontFamily: Theme.of(context)
                                 .textTheme
@@ -66,7 +78,9 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 10), // Optional spacing between the buttons
+                    const SizedBox(
+                      width: 10,
+                    ), // Optional spacing between the buttons
                     Expanded(
                       flex: 1,
                       child: ElevatedButton(
@@ -74,7 +88,17 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                           backgroundColor: Theme.of(context).primaryColor,
                         ),
                         onPressed: () {},
-                        child: const Text('Đóng gói'),
+                        child: Text(
+                          PACKAGE.tr(),
+                          style: TextStyle(
+                            fontFamily: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.fontFamily,
+                            fontSize: 14,
+                            color: Colors.black,
+                          ),
+                        ),
                       ),
                     ),
                   ]
@@ -85,7 +109,7 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                           child: OutlinedButton(
                             onPressed: () {},
                             child: Text(
-                              'Hủy bỏ',
+                              CANCEL.tr(),
                               style: TextStyle(
                                 fontFamily: Theme.of(context)
                                     .textTheme
@@ -97,8 +121,9 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                            width: 10), // Optional spacing between the buttons
+                        const SizedBox(
+                          width: 10,
+                        ), // Optional spacing between the buttons
                         Expanded(
                           flex: 1,
                           child: ElevatedButton(
@@ -106,7 +131,17 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                               backgroundColor: Theme.of(context).primaryColor,
                             ),
                             onPressed: () {},
-                            child: const Text('Giao hàng'),
+                            child: Text(
+                              DELIVER.tr(),
+                              style: TextStyle(
+                                fontFamily: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium
+                                    ?.fontFamily,
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
+                            ),
                           ),
                         ),
                       ]
@@ -117,7 +152,7 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                               child: OutlinedButton(
                                 onPressed: () {},
                                 child: Text(
-                                  'Hoàn trả',
+                                  RETURN_GOODS.tr(),
                                   style: TextStyle(
                                     fontFamily: Theme.of(context)
                                         .textTheme
@@ -129,7 +164,9 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(
+                              width: 10,
+                            ),
                             // Optional spacing between the buttons
                             Expanded(
                               flex: 1,
@@ -139,7 +176,17 @@ class _BottomOrderState extends State<BottomOrderComponent> {
                                       Theme.of(context).primaryColor,
                                 ),
                                 onPressed: () {},
-                                child: const Text('Hoàn tất'),
+                                child: Text(
+                                  DONE.tr(),
+                                  style: TextStyle(
+                                    fontFamily: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium
+                                        ?.fontFamily,
+                                    fontSize: 14,
+                                    color: Colors.black,
+                                  ),
+                                ),
                               ),
                             ),
                           ]

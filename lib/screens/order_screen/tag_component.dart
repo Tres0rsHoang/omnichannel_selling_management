@@ -15,13 +15,13 @@ class Tag {
 }
 
 class TagComponent extends StatefulWidget {
-  bool isSelected;
+  final bool isSelected;
   final Tag tag;
 
-  TagComponent({super.key, required this.isSelected, required this.tag});
+  const TagComponent({super.key, required this.isSelected, required this.tag});
 
   @override
-  _TagState createState() => _TagState();
+  State<TagComponent> createState() => _TagState();
 }
 
 class _TagState extends State<TagComponent> {

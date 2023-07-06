@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:selling_management/blocs/order_blocs/order_bloc.dart';
 import 'package:selling_management/constants/image_assets.dart';
+import 'package:selling_management/constants/key_translate.dart';
 import 'package:selling_management/screens/order_screen/bottom_order_component.dart';
 import 'package:selling_management/screens/order_screen/status_component.dart';
 import 'package:selling_management/screens/order_screen/tag_component.dart';
@@ -15,7 +17,7 @@ class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
 
   @override
-  _OrderState createState() => _OrderState();
+  State<OrderScreen> createState() => _OrderState();
 }
 
 class Channel {
@@ -98,8 +100,6 @@ class Order {
 }
 
 class _OrderState extends State<OrderScreen> {
-  // int _currentIndex = 0;
-
   @override
   void initState() {
     super.initState();
@@ -126,7 +126,7 @@ class _OrderState extends State<OrderScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 50,
                     width: 300,
                     child: TextField(
@@ -140,7 +140,7 @@ class _OrderState extends State<OrderScreen> {
                         isDense: true,
                         fillColor: Colors.blueGrey[50],
                         filled: true,
-                        hintText: 'Nhập để tìm kiếm',
+                        hintText: ENTER_TO_SEARCH.tr(),
                         hintStyle: TextStyle(
                           fontFamily: Theme.of(context)
                               .textTheme
@@ -163,8 +163,11 @@ class _OrderState extends State<OrderScreen> {
                                 indent: 10,
                                 endIndent: 10,
                               ),
-                              Icon(Icons.qr_code,
-                                  color: Colors.grey[500], size: 35),
+                              Icon(
+                                Icons.qr_code,
+                                color: Colors.grey[500],
+                                size: 35,
+                              ),
                             ],
                           ),
                         ),
@@ -206,7 +209,9 @@ class _OrderState extends State<OrderScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: state.tagList.length,
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(width: 16.0); // Adjust the width as needed
+                  return const SizedBox(
+                    width: 16.0,
+                  ); // Adjust the width as needed
                 },
                 itemBuilder: (BuildContext context, int index) {
                   // final isSelected = _chosenTagIndex == index;
@@ -246,7 +251,10 @@ class _OrderState extends State<OrderScreen> {
                           child: Column(children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  top: 16.0, left: 16.0, right: 16.0),
+                                top: 16.0,
+                                left: 16.0,
+                                right: 16.0,
+                              ),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -266,14 +274,18 @@ class _OrderState extends State<OrderScreen> {
                                           size: 25,
                                           color: Colors.grey[500],
                                         ),
-                                        SizedBox(width: 7),
+                                        const SizedBox(
+                                          width: 7,
+                                        ),
                                         Image.asset(
                                           SHOPEE_LOGO,
                                           width: 30,
                                           height: 20,
                                           fit: BoxFit.fill,
                                         ),
-                                        SizedBox(width: 3),
+                                        const SizedBox(
+                                          width: 3,
+                                        ),
                                         Expanded(
                                           child: Padding(
                                             padding:
@@ -299,7 +311,9 @@ class _OrderState extends State<OrderScreen> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(width: 15),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
                                   StatusComponent(
                                     status: orderBloc.state.orderList[position]
                                         .currentStatus,
@@ -310,10 +324,11 @@ class _OrderState extends State<OrderScreen> {
                             Divider(color: Colors.grey[500]),
                             Padding(
                               padding: const EdgeInsets.only(
-                                  bottom: 10.0,
-                                  left: 16.0,
-                                  right: 16.0,
-                                  top: 4.0),
+                                bottom: 10.0,
+                                left: 16.0,
+                                right: 16.0,
+                                top: 4.0,
+                              ),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -344,7 +359,9 @@ class _OrderState extends State<OrderScreen> {
                                             size: 18,
                                           ),
                                         ),
-                                        SizedBox(width: 7),
+                                        const SizedBox(
+                                          width: 7,
+                                        ),
                                         Expanded(
                                           child: Text(
                                             orderBloc
@@ -369,7 +386,6 @@ class _OrderState extends State<OrderScreen> {
                                     child: Align(
                                       alignment: Alignment.centerRight,
                                       child: Text(
-                                        // '22/06/23 16:06',
                                         formatTimestamp(
                                           DateTime.fromMillisecondsSinceEpoch(
                                             orderBloc.state.orderList[position]
@@ -413,7 +429,9 @@ class _OrderState extends State<OrderScreen> {
                                             size: 18,
                                           ),
                                         ),
-                                        SizedBox(width: 7),
+                                        const SizedBox(
+                                          width: 7,
+                                        ),
                                         Expanded(
                                           child: Text(
                                             orderBloc.state.orderList[position]
@@ -437,11 +455,10 @@ class _OrderState extends State<OrderScreen> {
                                     child: Align(
                                       alignment: Alignment.centerRight,
                                       child: Text(
-                                        convertPhoneNumber(orderBloc
-                                            .state
-                                            .orderList[position]
-                                            .customer
-                                            .phone),
+                                        convertPhoneNumber(
+                                          orderBloc.state.orderList[position]
+                                              .customer.phone,
+                                        ),
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                           fontFamily: Theme.of(context)
@@ -463,7 +480,7 @@ class _OrderState extends State<OrderScreen> {
                                   .copyWith(dividerColor: Colors.transparent),
                               child: ExpansionTile(
                                 title: Text(
-                                  'Danh sách sản phẩm',
+                                  ORDER_LIST.tr(),
                                   style: TextStyle(
                                     fontFamily: Theme.of(context)
                                         .textTheme
@@ -478,10 +495,11 @@ class _OrderState extends State<OrderScreen> {
                                     .map((data) {
                                   return Padding(
                                     padding: const EdgeInsets.only(
-                                        bottom: 16.0,
-                                        left: 16.0,
-                                        right: 16.0,
-                                        top: 4.0),
+                                      bottom: 16.0,
+                                      left: 16.0,
+                                      right: 16.0,
+                                      top: 4.0,
+                                    ),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -501,13 +519,14 @@ class _OrderState extends State<OrderScreen> {
                                             height: 20,
                                             data.image,
                                             fit: BoxFit.fill,
-                                            loadingBuilder:
-                                                (BuildContext context,
-                                                    Widget child,
-                                                    ImageChunkEvent?
-                                                        loadingProgress) {
-                                              if (loadingProgress == null)
+                                            loadingBuilder: (
+                                              BuildContext context,
+                                              Widget child,
+                                              ImageChunkEvent? loadingProgress,
+                                            ) {
+                                              if (loadingProgress == null) {
                                                 return child;
+                                              }
                                               return Center(
                                                 child:
                                                     CircularProgressIndicator(
@@ -524,7 +543,9 @@ class _OrderState extends State<OrderScreen> {
                                             },
                                           ),
                                         ),
-                                        SizedBox(width: 10),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
                                         Expanded(
                                           flex: 1,
                                           child: Column(
@@ -543,7 +564,9 @@ class _OrderState extends State<OrderScreen> {
                                                   color: Colors.grey[700],
                                                 ),
                                               ),
-                                              SizedBox(height: 6),
+                                              const SizedBox(
+                                                height: 6,
+                                              ),
                                               Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
@@ -580,7 +603,9 @@ class _OrderState extends State<OrderScreen> {
                                                             size: 18,
                                                           ),
                                                         ),
-                                                        SizedBox(width: 2),
+                                                        const SizedBox(
+                                                          width: 2,
+                                                        ),
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
@@ -654,7 +679,7 @@ class _OrderState extends State<OrderScreen> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Tổng cộng: ',
+                                    TOTAL.tr(),
                                     style: TextStyle(
                                       fontFamily: Theme.of(context)
                                           .textTheme
@@ -686,7 +711,9 @@ class _OrderState extends State<OrderScreen> {
                         );
                       },
                       separatorBuilder: (context, position) {
-                        return SizedBox(height: 5.0);
+                        return const SizedBox(
+                          height: 5.0,
+                        );
                       },
                       itemCount: orderBloc.state.orderList.length,
                     ),
@@ -699,7 +726,7 @@ class _OrderState extends State<OrderScreen> {
                         onPressed: () {
                           // Handle button press
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.add,
                           color: Colors.white,
                         ),
